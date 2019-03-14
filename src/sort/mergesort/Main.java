@@ -1,4 +1,4 @@
-package sort;
+package sort.mergesort;
 
 import java.util.Arrays;
 
@@ -10,7 +10,8 @@ import java.util.Arrays;
  **/
 public class Main {
     public static void main(String[] args) {
+        Solution solution = new Solution();
         int[] array = {3,4,5,1,2};
-        System.out.print(Arrays.toString(MinHeapTest.minHeapSort(array)));
+        System.out.print(Arrays.toString(solution.sort(array)));
     }
 }

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:web="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://JAVA.sun.com/xml/ns/j2ee http://JAVA.sun.com/xml/ns/j2ee/web-app_3_0.xsd
+	http://java.sun.com/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee"
+         id="WebApp_ID" version="3.0">
+    <display-name>shop</display-name>
+    <welcome-file-list>
+        <welcome-file>/index.jsp</welcome-file>
+    </welcome-file-list>
+    <!-- 使用H2控制台的Servlet H2控制台是一个独立的应用程序，包括它自己的Web服务器，但它可以作为一个servlet作为-->
+    <servlet>
+        <servlet-name>H2Console</servlet-name>
+        <servlet-class>org.h2.server.web.WebServlet</servlet-class>
+        <init-param>
+            <param-name>webAllowOthers</param-name>
+            <param-value></param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <!-- 映射H2控制台的访问路径 -->
+    <servlet-mapping>
+        <servlet-name>H2Console</servlet-name>
+        <url-pattern>/db/*</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>
